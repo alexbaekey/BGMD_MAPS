@@ -3,7 +3,7 @@ import numpy as np
 from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import classification_report
-from src import mispredict_label
+from src import mispredict_label, BGMD
 
 # settings
 #pd.set_option('display.max_rows', 500)
@@ -38,3 +38,6 @@ print(df_DT_flagged)
 
 print("number of mispredicted data")
 print(len(df_DT_flagged[df_DT_flagged['mispredict']==1]))
+
+test = BGMD.BGMD(df_DT_flagged, 0.05)
+print(test)

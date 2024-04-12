@@ -1,13 +1,12 @@
 import pandas as pd
+from . import ExtractBiasFeatures
 
-def BGMD(df):
+def BGMD(df, alpha):
     '''
     implementation of Bias Guided Misprediction Diagnoser
     input: df
     output: ruleset
     '''
-    # collect features as list
-    features = list(df.columns.values)
-
+    return ExtractBiasFeatures.ExtractBiasFeatures(df, alpha)
 
 
