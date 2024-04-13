@@ -40,4 +40,3 @@ print("number of mispredicted data")
 print(len(df_DT_flagged[df_DT_flagged['mispredict']==1]))
 
 test = BGMD.BGMD(df_DT_flagged, 0.05)
-print(test)
