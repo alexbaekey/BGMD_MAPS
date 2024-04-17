@@ -29,10 +29,11 @@ def BGMD(df, alpha):
                 break #TODO, make sure this breaks correctly
         ruleset.append(atoms[feature])
     '''
-    #cvg = 0
-    #while cvg <= delta:
-    #    ruleset = ...
-
+    #https://www.geeksforgeeks.org/sequential-covering-algorithm/#
+    cvg = 0
+    while cvg <= delta:
+        ruleset = ...
+        phi = LearnRule()
         #precision, recall, rulesize = evaluate_ruleset
     #return ruleset
 
