@@ -1,3 +1,16 @@
+# Installation
+Implementation of BGMD and MAPS, original work presented at Gesi et al 2024 - ICSE 2023
+
+install and activate environment:
+
+```bash
+conda install -f env.yml
+conda activate BGMD_MAPS
+```
+
+#Reimplementation
+Progress on a reimplementation of missing package BGMD can be found in the branch "redo-from-scratch"
+
 # Leveraging Feature Bias for Scalable Misprediction Explanation of Machine Learning Models
 This repository contains experimental data information and evaluation code for the paper "Leveraging Feature Bias for Scalable Misprediction Explanation of Machine Learning Models". Here, we present the details of the evaluation data and experimental results in Jupyter notebooks for easy reading.
 
