@@ -4,11 +4,11 @@ Implementation of BGMD and MAPS, original work presented at Gesi et al 2024 - IC
 install and activate environment:
 
 ```bash
-conda install -f env.yml
+conda env create -f env.yml
 conda activate BGMD_MAPS
 ```
 
-#Reimplementation
+# Reimplementation
 Progress on a reimplementation of missing package BGMD can be found in the branch "redo-from-scratch"
 
 # Leveraging Feature Bias for Scalable Misprediction Explanation of Machine Learning Models
