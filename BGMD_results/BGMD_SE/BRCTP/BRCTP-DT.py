@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 from imblearn.over_sampling import SMOTE
 from helper import get_performance, get_conflict_commit_performance, get_merge_coflict_mispredicted_region_test
 from sklearn.metrics import classification_report
+
 EPOCHS = 700
 BATCH_SIZE = 2048
 ACTIVATION = 'swish'
@@ -70,7 +71,6 @@ def BGMD_BRCTP_DT():
     y_train_sm
     
     ## MAPS
-    
     import time 
     import sys
     sys.path.insert(1, './mmd')
