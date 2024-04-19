@@ -1,6 +1,7 @@
 import pandas as pd
 from . import ExtractBiasFeatures
 from . import GenAtoms
+from . import LearnOneRule
 #from . import evaluate_ruleset
 
 def BGMD(df, alpha):
@@ -13,9 +14,13 @@ def BGMD(df, alpha):
     '''
 
     BA = ExtractBiasFeatures.ExtractBiasFeatures(df, alpha)
+    #print("Biased Attributes:")
+    #print(BA)
     atoms = GenAtoms.GenAtoms(df, BA)
-    print(atoms) 
+    #print("atoms")
+    #print(atoms) 
     # Rule learning
+    LearnOneRule.LearnOneRule(atoms, df)
     '''
     ruleset = []
 
@@ -30,11 +35,11 @@ def BGMD(df, alpha):
         ruleset.append(atoms[feature])
     '''
     #https://www.geeksforgeeks.org/sequential-covering-algorithm/#
-    cvg = 0
-    while cvg <= delta:
-        ruleset = ...
-        phi = LearnRule()
-        #precision, recall, rulesize = evaluate_ruleset
+    #cvg = 0
+    #while cvg <= delta:
+    #    ruleset = ...
+    #    phi = LearnRule()
+    #    #precision, recall, rulesize = evaluate_ruleset
     #return ruleset
 
 

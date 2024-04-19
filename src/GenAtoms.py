@@ -1,6 +1,7 @@
 #TODO categorical variables
 import pandas as pd
 import numpy as np
+import inspect
 
 def GenAtoms(df, BA):
     '''
@@ -33,4 +34,7 @@ def GenAtoms(df, BA):
         
         #print(atomic_predicates[feature])
 
+    #for key, value in atomic_predicates.items():
+        #print(key, value)
+        #print(inspect.getsource(value))
     return atomic_predicates

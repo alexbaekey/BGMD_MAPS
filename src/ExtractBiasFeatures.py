@@ -28,7 +28,7 @@ def ExtractBiasFeatures(df, alpha):
     
     for feature in A:
         res = stats.mannwhitneyu(mispred[feature],corpred[feature])
-        print(res.pvalue)
+        #print(res.pvalue)
         if res.pvalue < alpha:
             bias_attr.append(feature)
     return bias_attr
