@@ -1,18 +1,35 @@
-# Installation
-Implementation of BGMD and MAPS, original work presented at Gesi et al 2024 - ICSE 2023
-
-install and activate environment:
-
-```bash
-conda env create -f env.yml
-conda activate BGMD_MAPS
-```
-
 # Reimplementation
+Implementation of BGMD and MAPS, original work presented at Gesi et al 2023 - ICSE 2023
 Progress on a reimplementation of missing package BGMD can be found in the branch "redo-from-scratch"
 
 # Leveraging Feature Bias for Scalable Misprediction Explanation of Machine Learning Models
 This repository contains experimental data information and evaluation code for the paper "Leveraging Feature Bias for Scalable Misprediction Explanation of Machine Learning Models". Here, we present the details of the evaluation data and experimental results in Jupyter notebooks for easy reading.
+
+## Environment Setup
+### Pipenv
+One way to more easily insall the neccessary dependencies for this project is setup Pipenv. The following guide will walk you through this process.
+
+1. **Setup Python:** Begin by ensuring python is installed on your system. [This](https://wiki.python.org/moin/BeginnersGuide/Download) page has instructions for installing python if it is not already present.
+
+2. **Install Pipenv:** Next, use the following command to install pipenv.
+    ```sh
+    pip install pipenv --user
+    ```
+
+3. **Installing Project Dependencies:** Finally, to install all of the project dependencies, enter into the pipenv environment using `pipenv shell`, then run the following command.
+    ```shell
+    pipenv install
+    ```
+Now you should be able to run the code like normal without worrying about messing up other projects. Note: you will probably need to configure pipenv in whatever IDE you choose to use.
+
+
+### Conda
+To setup and activate the environment using conda, run the following commands
+
+```shell
+conda env create -f env.yml
+conda activate BGMD_MAPS
+```
 
 ## Experiment results
 ### Bias Guided Misprediction Diagnoser (BGMD) 
@@ -33,7 +50,7 @@ n_estimators=100, *, criterion='gini', max_depth=None, min_samples_split=2, min_
 
 
 ## Data
-Data size is big, so all data is stored in https://drive.google.com/drive/folders/1-m34KJz5bRQ-QO3N5lefu9axPFlFEDJ-?usp=sharing. We used five fold cross validation using below datasets (80%-train, 20%-test) and reports median number in the paper.
+Data size is big, so all data is stored in [Google Drive](https://drive.google.com/drive/folders/1-m34KJz5bRQ-QO3N5lefu9axPFlFEDJ-?usp=sharing). We used five fold cross validation using below datasets (80%-train, 20%-test) and reports median number in the paper.
 
 ### Merge conflict data
 
