@@ -1,7 +1,9 @@
+
+Anaconda3-2024.02-1-Linux-x86_64.sh
+=======
 # nodebbs addition
 data/
 *.swp
-
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
