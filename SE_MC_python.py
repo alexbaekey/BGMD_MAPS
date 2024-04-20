@@ -40,5 +40,8 @@ df_DT_flagged = mispredict_label.mispredict_label(df_DT_results, 'is_conflict', 
 #print("number of mispredicted data")
 #print(len(df_DT_flagged[df_DT_flagged['mispredict']==1]))
 
-test_ruleset = BGMD.BGMD(df_DT_flagged, 0.05)
-#print(test_ruleset)
+test_ruleset = BGMD.BGMD(df_DT_flagged, alpha, lamb1, lamb2, lamb3, delta)
+print(test_ruleset)
+
+
+

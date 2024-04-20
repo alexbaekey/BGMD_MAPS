@@ -44,10 +44,10 @@ def LearnOneRule(atoms, df):
                 recall = 0
                 print("divide by 0 in recall")
             new_obj = performance + recall
-            print("obj", obj)
             if new_obj > obj:
                 rule = (feature, condition) # TODO better way to store?
                 obj = new_obj
+            print("obj", obj, '\n')
     #TODO remove rule from ruleset, remove applicable data from dataset
     print(rule)
     return rule

@@ -4,18 +4,15 @@ from scipy import stats
 def ExtractBiasFeatures(df, alpha):
     '''
     input
-        df :pandas dataframe: original data with "mispredict" column
-        alpha :float: significance threshold
+        df :pandas dataframe: - original data with "mispredict" column
+        alpha :float: - Mann Whitney U test significance threshold
     
     internal
-        A :list: list of features - delete
-        I :list: misprediction indicator, flag 1 for misprediction - delete
-        mg - delete
-        cg - delete
-        pvalue :float: results of Mann-Whitney test
+        A :list: - list of strings, the data features
+        pvalue :float: - results of Mann-Whitney test
 
     output
-        bias_attr :list: the biased features
+        bias_attr :list: - list of strings, the biased features
     
     '''
     bias_attr = []
