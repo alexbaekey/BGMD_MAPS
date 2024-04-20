@@ -3,6 +3,7 @@ import inspect
 #https://www.geeksforgeeks.org/sequential-covering-algorithm/#
 
 def LearnOneRule(atoms, df):
+    obj = 0
     print(df.head())
     for feature in atoms:
         #print(feature)
@@ -32,12 +33,21 @@ def LearnOneRule(atoms, df):
             print("mispred nomatch: ", mispred_nomatch)
             print("corpred match: ", corpred_match)
             print("corpred nomatch: ", corpred_nomatch)
-
-
-        
-
-    #new_rule = atom
-    #covered = # data that new rule includes
-    #df = df-covered
-    #rules = rules+new_rule
-    #return df, rules
+            try:
+                performance = mispred_match/(mispred_match + corpred_match)
+            except:
+                performance = 0
+                print("divide by 0 in performance")
+            try:
+                recall = mispred_match/(mispred_match + mispred_nomatch)
+            except:
+                recall = 0
+                print("divide by 0 in recall")
+            new_obj = performance + recall
+            print("obj", obj)
+            if new_obj > obj:
+                rule = (feature, condition) # TODO better way to store?
+                obj = new_obj
+    #TODO remove rule from ruleset, remove applicable data from dataset
+    print(rule)
+    return rule
