@@ -12,10 +12,13 @@ def BGMD(df, alpha):
         BA :list: list of biased features
     output: ruleset
     '''
-
+    print("All Attributes:")
+    print(df.columns)
+    print('\n\n')
     BA = ExtractBiasFeatures.ExtractBiasFeatures(df, alpha)
-    #print("Biased Attributes:")
-    #print(BA)
+    print("Biased Attributes:")
+    print(BA) 
+    print('\n\n')
     atoms = GenAtoms.GenAtoms(df, BA)
     #print("atoms")
     #print(atoms) 

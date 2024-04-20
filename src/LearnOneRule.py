@@ -4,27 +4,26 @@ import inspect
 
 def LearnOneRule(atoms, df):
     for feature in atoms:
+        #print(feature)
+        #print(atoms[feature])
         for condition in atoms[feature]:
             print(inspect.getsource(condition))
             match = 0
             nomatch = 0
+            #print(condition)
+            #TODO split up data into mispredicted/correctly predicted
             for data in df[feature]:
-                print(type(data))
-                print(type(condition))
-                print(len(condition))
-                print(inspect.getsource(condition))
-                #print(data)
+                #mask = (f(df) for f in atoms[feature])
                 testbool = condition(data)
-                print(type(testbool))
                 if testbool == True:
                     match +=1
                 elif testbool == False:
                     nomatch +=1
-        print("matches: ", match)
-        print("nomatch: ", nomatch) 
-
-
-
+            print(feature)
+            print(condition)
+            print("matches: ", match)
+            print("nomatch: ", nomatch) 
+    
     #new_rule = atom
     #covered = # data that new rule includes
     #df = df-covered

@@ -21,16 +21,16 @@ def GenAtoms(df, BA):
         a,b,c,d = np.array_split(x_sorted, 4)
         
         #create predicates x op c where x is feature, op is <= or > and c is max of each bin
-        #c1, c2, c3, c4 = max(a), max(b), max(c), max(d)
-        constants = [a,b,c,d]
-        atomic_predicates[feature] = [  lambda x: x < a, \
-                                        lambda x: x >= a, \
-                                        lambda x: x < b, \
-                                        lambda x: x >= b, \
-                                        lambda x: x < c, \
-                                        lambda x: x >= c, \
-                                        lambda x: x < d, \
-                                        lambda x: x >= d ]
+        c1, c2, c3, c4 = max(a), max(b), max(c), max(d)
+        #constants = [a,b,c,d]
+        atomic_predicates[feature] = [  lambda x: x < c1, \
+                                        lambda x: x >= c1, \
+                                        lambda x: x < c2, \
+                                        lambda x: x >= c2, \
+                                        lambda x: x < c3, \
+                                        lambda x: x >= c3, \
+                                        lambda x: x < c4, \
+                                        lambda x: x >= c4 ]
         
         #print(atomic_predicates[feature])
 
