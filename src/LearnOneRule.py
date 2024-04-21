@@ -3,12 +3,22 @@ import inspect
 #https://www.geeksforgeeks.org/sequential-covering-algorithm/#
 
 def LearnOneRule(atoms, df):
+    '''
+    input
+        atoms :dict: atomic predicates, keys in dict are the feature, items are list of lambda functions
+        df :pandas dataframe: the original data
+
+    outputs
+        rule :tuple: - (feature, condition)
+        df_filtered :pandas df: the dataframe with data rule applies to removed
+    '''
     obj = 0
     print(df.head())
     for feature in atoms:
         #print(feature)
         #print(atoms[feature])
         for condition in atoms[feature]:
+            indices = []
             print(feature)
             print(condition)
             #print(inspect.getsource(condition))
@@ -23,6 +33,7 @@ def LearnOneRule(atoms, df):
                 testbool = condition(data)
                 if (testbool == True) and (df.iloc[i]['mispredict']==1):
                     mispred_match +=1
+                    indices.append(i)
                 elif (testbool == False) and (df.iloc[i]['mispredict']==1):
                     mispred_nomatch +=1
                 elif (testbool == True) and (df.iloc[i]['mispredict']==0):
@@ -47,7 +58,12 @@ def LearnOneRule(atoms, df):
             if new_obj > obj:
                 rule = (feature, condition) # TODO better way to store?
                 obj = new_obj
+                final_indices = indices
             print("obj", obj, '\n')
     #TODO remove rule from ruleset, remove applicable data from dataset
     print(rule)
-    return rule
+    #df = ~df[rule[0]]
+    df_filtered = ~df.filter(items=final_indices, axis=0)
+    #print(final_indices)
+    print(df_filtered)
+    return rule, df_filtered

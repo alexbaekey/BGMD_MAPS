@@ -4,15 +4,12 @@ from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import classification_report
 from src import mispredict_label, BGMD
-import parameters # coverage and constants in rule learning
+from parameters import * # coverage and constants in rule learning
 
 # settings
 #pd.set_option('display.max_rows', 500)
 #pd.set_option('display.max_columns', 500)
 #pd.set_option('display.width', 1000)
-
-# parameters
-FOLDS = 5
 
 data_path = 'data/se/data_Python.csv'
 label_path = 'data/se/label_Python.csv'

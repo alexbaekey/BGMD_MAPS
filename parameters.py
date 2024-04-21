@@ -1,3 +1,6 @@
+# ML (DT model and evaluation)
+FOLDS = 5
+
 # Rule learning 
 # obj = lamb1 * precision  +  lamb2 * recall  +  lamb3 * (1/size(rules))e
 
