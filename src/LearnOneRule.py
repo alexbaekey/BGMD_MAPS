@@ -44,16 +44,16 @@ def LearnOneRule(atoms, df):
             #print("corpred match: ", corpred_match)
             #print("corpred nomatch: ", corpred_nomatch)
             try:
-                performance = mispred_match/(mispred_match + corpred_match)
+                precision = mispred_match/(mispred_match + corpred_match)
             except:
-                performance = 0
+                precision = 0
                 print("divide by 0 in performance")
             try:
                 recall = mispred_match/(mispred_match + mispred_nomatch)
             except:
                 recall = 0
                 print("divide by 0 in recall")
-            new_obj = performance + recall
+            new_obj = precision + recall
             if new_obj > obj:
                 rule = (feature, condition) # TODO better way to store?
                 obj = new_obj
